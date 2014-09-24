@@ -1,0 +1,25 @@
+{
+  "name": "VMFParser",
+  "version": "0.0.0",
+  "description": "A small VMF to JSON parser",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leops/vmfparser.git"
+  },
+  "keywords": [
+    "vmf",
+    "parser",
+    "hammer"
+  ],
+  "author": "leops",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leops/vmfparser/issues"
+  },
+  "homepage": "https://github.com/leops/vmfparser",
+  "dependencies": {
+    "xregexp": "^2.0.0",
+    "lodash": "^2.4.1"
+  }
+}
