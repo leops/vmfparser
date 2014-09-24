@@ -36,7 +36,7 @@ function setKey(a, b, c) {
     return a;
 }
 
-module.exports = exports = function(code) {
+module.exports = exports = function parse(code) {
     var ret = {},
         res = XRegExp.matchRecursive(code, '{', '}', 'g', {
             valueNames: ['key', null, 'value', null]
@@ -57,7 +57,7 @@ module.exports = exports = function(code) {
         if(key.match(/^\w+$/)) {
             var val = null;
             if(value.match(/\{/)) {
-                val = recursiveParse(value);
+                val = parse(value);
                 //console.log(value, val);
             } else {
                 val = process(value);

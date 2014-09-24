@@ -7,6 +7,8 @@ I have no idea why.
 The interesting thing is, it doesn't have to be a VMF. You can actually use it
 to hold any kind of data, JSON like.
 
+See `example.js` for ... an example.
+
 # Multiple values per-key
 This if the functionnality VMF but JSON does not: the ability to have multiple
 key with the same name. Here's an example :
@@ -19,7 +21,7 @@ key with the same name. Here's an example :
 If you try to parse this, you'll obtain this JS object :
 
 ```JS
-someKey: "someValue
+someKey: "someValue"
 ```
 
 But with VMF, you can do this:
