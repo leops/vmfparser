@@ -1,6 +1,12 @@
 var _ = require('lodash'),
     XRegExp = require('XRegExp').XRegExp;
 
+function pair(b, c) {
+    var a = {};
+    a[b] = c;
+    return a;
+}
+
 function process(value) {
     return _.reduce(value.split('\n').filter(function(e) {
         return e && e !== '';
@@ -9,8 +15,7 @@ function process(value) {
             return e && e.match(/^\s*$/) === null;
         });
         if(line.length >= 2) {
-            result = merge(result, setKey({}, line[0], line[1]));
-            //result[line[0]] = line[1];
+            result = merge(result, pair(line[0], line[1]));
         }
         return result;
     }, {});
@@ -29,11 +34,6 @@ function merge(dest, src) {
         }
     }
     return dest;
-}
-
-function setKey(a, b, c) {
-    a[b] = c;
-    return a;
 }
 
 module.exports = exports = function parse(code) {
@@ -58,11 +58,10 @@ module.exports = exports = function parse(code) {
             var val = null;
             if(value.match(/\{/)) {
                 val = parse(value);
-                //console.log(value, val);
             } else {
                 val = process(value);
             }
-            ret = merge(ret, setKey({}, key, val));
+            ret = merge(ret, pair(key, val));
         } else {
             ret = merge(ret, process(res[i].name));
         }
