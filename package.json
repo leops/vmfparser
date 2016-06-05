@@ -1,8 +1,8 @@
 {
   "name": "vmfparser",
-  "version": "0.1.0",
-  "description": "A small VMF to JSON parser",
-  "main": "main.js",
+  "version": "1.0.0",
+  "description": "A small Valve Map File parser",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/leops/vmfparser.git"
@@ -17,9 +17,5 @@
   "bugs": {
     "url": "https://github.com/leops/vmfparser/issues"
   },
-  "homepage": "https://github.com/leops/vmfparser",
-  "dependencies": {
-    "xregexp": "^2.0.0",
-    "lodash": "^2.4.1"
-  }
+  "homepage": "https://github.com/leops/vmfparser"
 }

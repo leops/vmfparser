@@ -8,7 +8,15 @@ parser in JavaScript. I have no idea why.
 The code is interesting because it's doesn't have to be a map you're parsing.
 You can actually use the VMF format to store any kind of data, JSON like.
 
-See `example.js` for an usage example.
+See `test/example.js` for an usage example.
+
+## Usage
+The module exports a single `parse(input, options)` function. The `input` is a
+VMF source string, and `options` is an optional object with the following
+properties:
+
+- `ast`: If true, will return the Abstract Syntax Tree instead of the
+transformed object.
 
 ## Multiple values per-key
 This is a unique functionnality of VMF, non-existent in JSON: the ability to
