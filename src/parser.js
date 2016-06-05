@@ -1,4 +1,4 @@
-module.export = function(tokens) {
+module.exports = function(tokens) {
     let current = 0;
 
     function walk() {

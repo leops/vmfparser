@@ -23,6 +23,6 @@ function reduce(obj, prop) {
     return obj;
 }
 
-module.export = function(ast) {
+module.exports = function(ast) {
     return ast.body.reduce(reduce, {});
 }

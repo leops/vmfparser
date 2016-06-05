@@ -1,6 +1,6 @@
 {
   "name": "vmfparser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small Valve Map File parser",
   "main": "src/index.js",
   "repository": {

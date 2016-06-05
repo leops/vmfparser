@@ -1,7 +1,7 @@
 const WHITESPACE = /\s/;
 const NAME = /[a-z_]/i;
 
-module.export = function(input) {
+module.exports = function(input) {
     const tokens = [];
     let current = 0;
 
