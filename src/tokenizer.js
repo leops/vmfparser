@@ -1,5 +1,5 @@
 const WHITESPACE = /\s/;
-const NAME = /[a-z_]/i;
+const NAME = /[a-z0-9_]/i;
 
 module.exports = function(input) {
     const tokens = [];
