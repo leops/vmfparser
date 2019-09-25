@@ -1,24 +1,29 @@
 const WHITESPACE = /\s/;
 const NAME = /[a-z0-9_]/i;
 
-module.exports = function(input) {
-    const tokens = [];
+export interface Token {
+    type: 'bracket' | 'string' | 'name';
+    value: string;
+}
+
+export default function tokenizer(input: string) {
+    const tokens: Token[] = [];
     let current = 0;
 
     while (current < input.length) {
         let char = input[current];
 
-        switch(true) {
-            case (char === '{' || char === '}'):
+        switch (true) {
+            case char === '{' || char === '}':
                 tokens.push({
                     type: 'bracket',
-                    value: char
+                    value: char,
                 });
 
                 current++;
                 continue;
 
-            case (char === '"'): {
+            case char === '"': {
                 let value = '';
                 char = input[++current];
 
@@ -29,7 +34,7 @@ module.exports = function(input) {
 
                 tokens.push({
                     type: 'string',
-                    value
+                    value,
                 });
 
                 current++;
@@ -50,14 +55,16 @@ module.exports = function(input) {
 
                 tokens.push({
                     type: 'name',
-                    value
+                    value,
                 });
 
                 continue;
             }
 
             default:
-                throw new TypeError(`Unknown character: ${char} at position ${current}`);
+                throw new TypeError(
+                    `Unknown character: ${char} at position ${current}`,
+                );
         }
     }
 

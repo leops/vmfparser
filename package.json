@@ -1,21 +1,28 @@
 {
-  "name": "vmfparser",
-  "version": "1.1.1",
-  "description": "A small Valve Map File parser",
-  "main": "src/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/leops/vmfparser.git"
-  },
-  "keywords": [
-    "vmf",
-    "parser",
-    "hammer"
-  ],
-  "author": "leops",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/leops/vmfparser/issues"
-  },
-  "homepage": "https://github.com/leops/vmfparser"
+    "name": "vmfparser",
+    "version": "1.2.1",
+    "description": "A small Valve Map File parser",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "prepublishOnly": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/leops/vmfparser.git"
+    },
+    "keywords": [
+        "vmf",
+        "parser",
+        "hammer"
+    ],
+    "author": "leops",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/leops/vmfparser/issues"
+    },
+    "homepage": "https://github.com/leops/vmfparser",
+    "devDependencies": {
+        "typescript": "^3.6.3"
+    }
 }

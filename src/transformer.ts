@@ -1,7 +1,9 @@
-function addProp(obj, key, value) {
+import { File, Node } from './parser';
+
+function addProp(obj: any, key: string, value: string) {
     const currentValue = obj[key];
-    if(typeof currentValue !== 'undefined') {
-        if(currentValue instanceof Array) {
+    if (typeof currentValue !== 'undefined') {
+        if (Array.isArray(currentValue)) {
             currentValue.push(value);
         } else {
             obj[key] = [currentValue, value];
@@ -11,7 +13,7 @@ function addProp(obj, key, value) {
     }
 }
 
-function reduce(obj, prop) {
+function reduce(obj: any, prop: Node) {
     if (prop.type === 'Property') {
         addProp(obj, prop.name, prop.value);
     }
@@ -23,6 +25,6 @@ function reduce(obj, prop) {
     return obj;
 }
 
-module.exports = function(ast) {
+export default function transformer(ast: File) {
     return ast.body.reduce(reduce, {});
 }
